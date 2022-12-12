@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Password Generator</h3>
+        <div class="password">
+            <p id="password">P4$5WOrd</p>
+            <i class="far fa-copy" onclick="passwordGenerator.copyPassword()"></i>
+        </div>
+        <div class="passwordParameters">
+            <div class="characterLength">
+                <p class="characterLengthText">Character Length</p>
+                <p class="characterLengthValue" id="characterLengthValue">10</p>
+            </div>
+
+            <div class="inputRange">
+                <input type="range" min="0" max="20" class="slider" value="10" id="slider" onchange="passwordGenerator.getCharacterLengthValue()">
+            </div>
+            <div class="inputCheckbox">
+                <input type="checkbox" id="uppercase" onclick="passwordGenerator.setChar(`ABCDEFGHIJKLMNOPQRSTUVWXYZ`)">
+                <label for="uppercase">Include Uppercase Letters</label>
+            </div>
+            <div class="inputCheckbox">
+                <input type="checkbox" id="lowercase"  onclick="passwordGenerator.setChar(`abcdefghijklmnopqrstuvwxyz`)">
+                <label for="lowercase">Include Lowercase Letters</label>
+            </div>
+            <div class="inputCheckbox">
+                <input type="checkbox" id="numbers"  onclick="passwordGenerator.setChar(`0123456789`)">
+                <label for="numbers">Include Numbers</label>
+            </div>
+            <div class="inputCheckbox">
+                <input type="checkbox" id="symbols"  onclick="passwordGenerator.setChar(`!@#$%^&*()`)">
+                <label for="symbols">Include Symbols</label>
+            </div>
+
+            <div class="passwordStrenght">
+                <p>SRENGTH </p>
+                <p class="stregthtType">
+                    MEDIUM
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </p>
+            </div>
+            <button onclick="passwordGenerator.generatePassword()">GENERATE</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

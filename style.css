@@ -1,0 +1,141 @@
+:root {
+    --color: rgb(99, 255, 117);
+    --color-card: rgb(55, 53, 53);
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.container {
+    height: 600px;
+    width: 400px;
+    margin: auto;
+}
+
+.container h3  {
+    text-align: center;
+    color: grey;
+}
+
+.container .password {
+    height: 50px;
+    background-color: var(--color-card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.container .password i {
+    cursor: pointer;
+}
+
+.container .passwordParameters {
+    background-color: var(--color-card);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    padding-top: 0px;
+    gap: 15px;
+}
+
+.container .passwordParameters .characterLength {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.container .passwordParameters .characterLength .characterLengthValue {
+    color: var(--color);
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: var(--color);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.slider::-moz-range-track,
+.slider::-moz-range-progress {
+    width: 100%;
+    background: var(--color);
+}
+
+.slider::-webkit-slider-thumb:active {
+    border: 2px solid;
+    border-color: var(--color);
+    background: black;
+}
+
+.container .passwordParameters .inputRange input[type="range"]::-moz-range-thumb {
+    background-color: aliceblue;
+}
+
+.container .passwordParameters .inputCheckbox input[type="checkbox"] {
+    background-color: black;
+    cursor: pointer;
+}
+
+.container .passwordParameters .passwordStrenght {
+    background-color: black;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .passwordParameters .passwordStrenght .stregthtType {
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.container .passwordParameters .passwordStrenght .stregthtType span {
+    height: 20px;
+    width: 5px;
+    border: 1px solid white;
+}
+
+.container .passwordParameters .passwordStrenght .stregthtType .active {
+    background-color: yellow;
+}
+
+.container .passwordParameters button {
+    background-color: var(--color);
+    color: var(--color-card);
+    border-color: var(--color);
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.container .passwordParameters button:hover {
+    color: var(--color);
+    background-color: var(--color-card);
+}
