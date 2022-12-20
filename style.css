@@ -14,6 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    font-family: sans-serif;
 }
 
 .container {
@@ -35,30 +36,39 @@ body {
     align-items: center;
     padding-left: 25px;
     padding-right: 25px;
-    font-size: 30px;
+    font-size: 26px;
     margin-bottom: 15px;
 }
 
 .container .password i {
     cursor: pointer;
+    color: var(--color);
 }
+
+.container .password i:active {
+    color: white;
+}
+
 
 .container .passwordParameters {
     background-color: var(--color-card);
     display: flex;
     flex-direction: column;
     padding: 25px;
-    padding-top: 0px;
+    padding-top: 15px;
     gap: 15px;
 }
 
 .container .passwordParameters .characterLength {
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .container .passwordParameters .characterLength .characterLengthValue {
     color: var(--color);
+    font-size: 30px;
+    margin: 0px;
 }
 
 .slider {
@@ -110,9 +120,9 @@ body {
 
 .container .passwordParameters .passwordStrenght .stregthtType {
     display: inline-flex;
-    align-self: center;
+    align-items: center;
     justify-content: center;
-    gap: 3px;
+    gap: 7px;
 }
 
 .container .passwordParameters .passwordStrenght .stregthtType span {
@@ -123,6 +133,9 @@ body {
 
 .container .passwordParameters .passwordStrenght .stregthtType .active {
     background-color: yellow;
+    height: 20px;
+    width: 5px;
+    border: 1px solid white;
 }
 
 .container .passwordParameters button {

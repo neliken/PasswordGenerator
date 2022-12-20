@@ -12,7 +12,7 @@
     <div class="container">
         <h3>Password Generator</h3>
         <div class="password">
-            <p id="password">P4$5WOrd</p>
+            <p id="password" >P4$5WOrd</p>
             <i class="far fa-copy" onclick="passwordGenerator.copyPassword()"></i>
         </div>
         <div class="passwordParameters">
@@ -42,18 +42,19 @@
             </div>
 
             <div class="passwordStrenght">
-                <p>SRENGTH </p>
-                <p class="stregthtType">
-                    MEDIUM
-                    <span class="active"></span>
+                <p>STRENGTH </p>
+                <div class="stregthtType">
+                    <p id="stregthtType"></p>
                     <span></span>
                     <span></span>
                     <span></span>
-                </p>
+                    <span></span>
+                </div>
             </div>
             <button onclick="passwordGenerator.generatePassword()">GENERATE</button>
         </div>
     </div>
+    <script type="text/javascript" src="path/to/zxcvbn.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

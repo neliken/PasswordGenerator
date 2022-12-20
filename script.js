@@ -3,8 +3,30 @@ class PasswordGenerator {
         this.slider = document.getElementById("slider");
         this.characterLength = document.getElementById("characterLengthValue");
         this.password = document.getElementById("password");
-        this.spans = document.getElementsByClassName("span");
+        this.spans = document.querySelectorAll('span');
+        this.checkboxs = document.getElementsByTagName('input');
+        this.stregthtType = document.getElementById('stregthtType');
+        this.characterLengthValue = 10;
         this.chars = "";
+    }
+
+    checkPasswordStrength(generatedPassword) {
+        let score = zxcvbn(generatedPassword).score;
+        let scoreType = ['LOW', 'MEDIUM-LOW' ,'MEDIUM', 'COMPLEX'];
+
+        this.deleteActiveSpans();
+        for (let i = 0; i < this.spans.length; i++) {
+            this.stregthtType.innerText = scoreType[score-1];
+            if(i < score) {
+                this.spans[i].classList.add('active');
+            }
+        }
+    }
+
+    deleteActiveSpans() {
+        this.spans.forEach((span) => {
+            span.classList.remove('active');
+        })
     }
 
     getCharacterLengthValue() {
@@ -27,10 +49,11 @@ class PasswordGenerator {
             generatedPassword += this.chars.substring(randomNumber, randomNumber +1);
         }
         this.password.innerHTML = generatedPassword;
+        this.checkPasswordStrength(generatedPassword);
     }
 
     copyPassword() {
-        
+        navigator.clipboard.writeText(this.password.innerText);
     }
 }
 
